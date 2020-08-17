@@ -40,3 +40,6 @@ Route::get('/vue1', function()
 Route::get('article/{n}', function($n) { 
     return view('article')->with('numero', $n); 
 })->where('n', '[0-9]+');
+
+// == return view('article')->withNumero($n);
+// == return view('article', ['numero' => $n]);
