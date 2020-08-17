@@ -6,6 +6,6 @@
 </head>
 <body>
     <h1>Page article</h1>
-	<p>C'est l'article n° <?php echo $numero ?></p>
+	<p>C'est l'article n° {{ $numero }} </p>
 </body>
 </html>
