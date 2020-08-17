@@ -43,3 +43,8 @@ Route::get('article/{n}', function($n) {
 
 // == return view('article')->withNumero($n);
 // == return view('article', ['numero' => $n]);
+
+
+Route::get('facture/{n}', function($n) { 
+    return view('facture')->withNumero($n); 
+})->where('n', '[0-9]+');
