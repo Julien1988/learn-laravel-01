@@ -7,5 +7,8 @@
 <body>
 <h1>Ceci est généré via un template</h1>
 	@yield('contenu')
+
+    
+<script src="/js/app.js"></script>
 </body>
 </html>

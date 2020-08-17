@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // Route::get('1', function() { return 'Je suis la page 1 !'; });
@@ -27,19 +27,19 @@ Route::get('/', function () {
 // });
 
 
-Route::get('{n}', function($n) { 
-    return response('Je suis la page ' . $n . ' !', 200); 
-})->where('n', '[1-3]');
+// Route::get('{n}', function($n) { 
+//     return response('Je suis la page ' . $n . ' !', 200); 
+// })->where('n', '[1-3]');
 
-Route::get('/vue1', function()
-{
-    return view('view1');
-});
+// Route::get('/vue1', function()
+// {
+//     return view('view1');
+// });
 
 
-Route::get('article/{n}', function($n) { 
-    return view('article')->with('numero', $n); 
-})->where('n', '[0-9]+');
+// Route::get('article/{n}', function($n) { 
+//     return view('article')->with('numero', $n); 
+// })->where('n', '[0-9]+');
 
 // == return view('article')->withNumero($n);
 // == return view('article', ['numero' => $n]);
@@ -48,3 +48,7 @@ Route::get('article/{n}', function($n) {
 Route::get('facture/{n}', function($n) { 
     return view('facture')->withNumero($n); 
 })->where('n', '[0-9]+');
+
+Route::get('/', 'WelcomeController@index');
+//Route::get('/', ['uses' => 'WelcomeController@index', 'as' => 'home']);
+Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
