@@ -13,14 +13,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
-Route::get('facture/{n}', function($n) { 
-    return view('facture')->withNumero($n); 
-})->where('n', '[0-9]+');
 
-Route::get('/', 'WelcomeController@index');
-//Route::get('/', ['uses' => 'WelcomeController@index', 'as' => 'home']);
-Route::get('article/{n}', 'ArticleController@show')->where('n', '[0-9]+');
+
+Route::get('users', 'UsersController@getInfos');
+Route::post('users', 'UsersController@postInfos');
+
+
